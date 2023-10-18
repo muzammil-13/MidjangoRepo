@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!--CSS Link-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <meta charset="UTF-8">
+    <title>Base Page</title>
+</head>
+<body>
+<!-- Nav bar -->
+<nav class="navbar">
+    <a class="navbar-brand" href="#">
+        <span style="padding-left:10px; padding-right:10px;">
+            <img src="media/gallery/imdb-logo-bingGenerated-bgRemoved.png" alt="" width="70" height="60">
+        </span>
+        <span style="padding-left:2px; padding-right:2px; color:#ffffff;">
+           IMDB Lite
+        </span>
+    </a>
+</nav>
+
+{% block body %}
+{% endblock %}
+
+<!--Footer of the website-->
+<footer class="bg-dark text-white pt-3 mt-4">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-6 mb-3">
+        <h5 class="h6 mb-3">About Us</h5>
+        <p>IMDBLite is a streaming service that offers a wide variety of award-winning TV shows, movies, documentaries, and more on thousands of internet-connected devices.</p>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-3">
+        <h5 class="h6 mb-3">Help Center</h5>
+        <ul class="list-unstyled">
+          <li><a href="#">Account & Billing</a></li>
+          <li><a href="#">Watching Devices</a></li>
+          <li><a href="#">Streaming Quality</a></li>
+          <li><a href="#">Troubleshooting</a></li>
+          <li><a href="#">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-3">
+        <h5 class="h6 mb-3">Terms of Service</h5>
+        <ul class="list-unstyled">
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Cookie Policy</a></li>
+          <li><a href="#">Legal Notices</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-6 mb-3">
+          <h5 class="h6 mb-3">Social Media</h5>
+          <div class="social-media-logos">
+
+        <ul class="list-inline">
+          <li class="list-inline-item"><a href="#"><img src="media/gallery/facebook-logo.png" alt="Facebook"><i class="fa fa-facebook"></i>facebook</a></li><br>
+          <li class="list-inline-item"><a href="#"><img src="media/gallery/x-twitter-logo-pngwing.com.png" alt="twitter"><i class="fa fa-twitter"></i>twitter</a></li><br>
+          <li class="list-inline-item"><a href="#"><img src="media/gallery/instagram logo-pngwing.com.png" alt="instagram"><i class="fa fa-instagram"></i>instagram</a></li><br>
+          <li class="list-inline-item"><a href="#"><img src="media/gallery/youtube logo-pngwing.com.png" alt="youtube"><i class="fa fa-youtube"></i>Youtube</a></li><br>
+        </ul>
+          </div>
+      </div>
+    </div>
+    <hr>
+    <p class="text-center mb-0">Copyright &copy; 2023 IMDBLite, Inc. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>

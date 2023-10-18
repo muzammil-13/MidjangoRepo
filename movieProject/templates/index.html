@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<!--Movie Bootstrap cards-->
+<div class="container">
+    <div class="row">
+        {% for i in movie_list %}
+        <div class="col-md-3">
+            <div class="card" style="width: 18rem; color:white;">
+                <img src="{{i.img.url}}" class="card-img-top" alt="A movie poster" height="250">
+                    <div class="card-body">
+                            <h5 class="card-title">{{i.name}}</h5>
+                            <p class="card-text">{{i.year}}</p>
+                            <a href="{% url 'movieApp:detail' i.id %}" class="btn btn-primary">Details</a>
+                    </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
