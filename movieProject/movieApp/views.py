@@ -29,6 +29,17 @@ def add_movie(request):
     return render(request, 'add.html')
 
 
+def add_amovie(request):
+    if request.method == 'POST':
+        form = MovieForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+    else:
+        form = MovieForm()
+    return render(request, 'add.html', {'form': form})
+
+
 def update(request, id):
     movie = Movie.objects.get(id=id)
     form = MovieForm(request.POST or None,
@@ -39,9 +50,10 @@ def update(request, id):
     return render(request, 'edit.html',
                   {'form': form, 'movie': movie})
 
-def delete(request,id):
-    if request.method=="POST":
-        movie=Movie.objects.get(id=id)
+
+def delete(request, id):
+    if request.method == "POST":
+        movie = Movie.objects.get(id=id)
         movie.delete()
         return redirect('/')
-    return render(request,'delete.html')
+    return render(request, 'delete.html')

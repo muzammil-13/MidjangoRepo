@@ -11,13 +11,11 @@
 <body>
 <!-- Nav bar -->
 <nav class="navbar">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="/">
         <span style="padding-left:10px; padding-right:10px;">
-            <img src="media/gallery/imdb-logo-bingGenerated-bgRemoved.png" alt="" width="70" height="60">
+            <img src="{% static 'imdblite-logo.png' %}" alt="imdb lite logo" width="70" height="70">
         </span>
-        <span style="padding-left:2px; padding-right:2px; color:#ffffff;">
-           IMDB Lite
-        </span>
+        <span style="font-size: 1em; color: white;">IMDB Lite</span>
     </a>
 </nav>
 
@@ -30,14 +28,14 @@
     <div class="row">
       <div class="col-lg-3 col-md-6 mb-3">
         <h5 class="h6 mb-3">About Us</h5>
-        <p>IMDBLite is a streaming service that offers a wide variety of award-winning TV shows, movies, documentaries, and more on thousands of internet-connected devices.</p>
+        <p>IMDB Lite is a Movie Details Database that offers information about a wide variety of movies.</p>
       </div>
       <div class="col-lg-3 col-md-6 mb-3">
         <h5 class="h6 mb-3">Help Center</h5>
         <ul class="list-unstyled">
-          <li><a href="#">Account & Billing</a></li>
-          <li><a href="#">Watching Devices</a></li>
-          <li><a href="#">Streaming Quality</a></li>
+<!--          <li><a href="#">Account & Billing</a></li>-->
+<!--          <li><a href="#">Watching Devices</a></li>-->
+<!--          <li><a href="#">Streaming Quality</a></li>-->
           <li><a href="#">Troubleshooting</a></li>
           <li><a href="#">Contact Us</a></li>
         </ul>
@@ -54,18 +52,17 @@
       <div class="col-lg-3 col-md-6 mb-3">
           <h5 class="h6 mb-3">Social Media</h5>
           <div class="social-media-logos">
-
         <ul class="list-inline">
-          <li class="list-inline-item"><a href="#"><img src="media/gallery/facebook-logo.png" alt="Facebook"><i class="fa fa-facebook"></i>facebook</a></li><br>
-          <li class="list-inline-item"><a href="#"><img src="media/gallery/x-twitter-logo-pngwing.com.png" alt="twitter"><i class="fa fa-twitter"></i>twitter</a></li><br>
-          <li class="list-inline-item"><a href="#"><img src="media/gallery/instagram logo-pngwing.com.png" alt="instagram"><i class="fa fa-instagram"></i>instagram</a></li><br>
-          <li class="list-inline-item"><a href="#"><img src="media/gallery/youtube logo-pngwing.com.png" alt="youtube"><i class="fa fa-youtube"></i>Youtube</a></li><br>
+          <li class="list-inline-item"><a href="#"><img src="{% static 'facebook-logo.png' %}" alt="Facebook"><i class="fa fa-facebook"></i>facebook</a></li><br>
+          <li class="list-inline-item"><a href="#"><img src="{% static 'x-twitter-logo-pngwing.com.png' %}" alt="twitter"><i class="fa fa-twitter"></i>twitter</a></li><br>
+          <li class="list-inline-item"><a href="#"><img src="{% static 'instagram logo-pngwing.com.png' %}" alt="instagram"><i class="fa fa-instagram"></i>instagram</a></li><br>
+          <li class="list-inline-item"><a href="#"><img src="{% static 'youtube logo-pngwing.com.png' %}" alt="youtube"><i class="fa fa-youtube"></i>Youtube</a></li><br>
         </ul>
           </div>
       </div>
     </div>
     <hr>
-    <p class="text-center mb-0">Copyright &copy; 2023 IMDBLite, Inc. All rights reserved.</p>
+    <p class="text-center mb-0">&copy; 2023 IMDB-Lite, Inc. All rights reserved.</p>
   </div>
 </footer>
 </body>

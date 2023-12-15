@@ -6,8 +6,8 @@
     <div class="row">
         {% for i in movie_list %}
         <div class="col-md-3">
-            <div class="card" style="width: 18rem; color:white;">
-                <img src="{{i.img.url}}" class="card-img-top" alt="A movie poster" height="250">
+            <div class="card" style="width: 18rem; color:white; padding:10px;">
+                <img src="{{i.img.url}}" class="card-img-top" alt="A movie poster" height="350">
                     <div class="card-body">
                             <h5 class="card-title">{{i.name}}</h5>
                             <p class="card-text">{{i.year}}</p>
@@ -19,4 +19,17 @@
     </div>
 </div>
 
+<!--add a movie button-->
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+<div class="card" style="width: 18rem; color:white; padding:10px;">
+                <img src="media/gallery/An image for add movie.jpeg" class="card-img-top" alt="add new movie" height="150"; width="200">
+                    <div class="card-body">
+                        <a class="btn btn-warning" href="{% url 'movieApp:add_amovie' %}">Add a Movie</a> &nbsp;
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
