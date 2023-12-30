@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block metadescription %}
+GradNow School Store Login page
+{% endblock %}
+
+{% block title %}
+Login Page
+{% endblock %}
+
+{% block content %}
+<div class="container">
+
+    <h2>Login</h2>
+  <form method="post">
+    {% csrf_token %}
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username">
+    <label for="password">Password:</label>
+    <input type="password" name="password" id="password">
+    <button type="submit">Login</button>
+
+    <h4>New User? <a href="/register">Register</a></h4>
+
+  </form>
+
+</div>
+{% endblock %}

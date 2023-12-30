@@ -20,14 +20,16 @@
     <title>{% block title %} {% endblock %}</title>
 </head>
 <body>
-{% include 'header.html' %}
+
     <div class="container">
+        {% include 'header.html' %}
         {% include 'navbar.html' %}
         {% block content %}
         {% endblock %}
-<br><br><br>
+        <br><br><br>
+        {% include 'footer.html' %}
     </div>
-{% include 'footer.html' %}
+
 
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->

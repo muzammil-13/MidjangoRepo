@@ -1,0 +1,134 @@
+/*CONTAINER CLASS TEMPLATE*/
+.container {
+  width: 80%;
+  max-width: 800px;
+  margin: auto;
+  padding: 20px;
+  background-color: #f0f0f0;
+}
+
+
+/*FORM PAGE*/
+.form {
+			margin: 20px;
+			padding: 20px;
+			border: 1px solid black;
+			border-radius: 10px;
+			background-color: #f2f2f2;
+			font-family: Arial, sans-serif;
+		}
+		label {
+			display: block;
+			margin-top: 10px;
+			margin-bottom: 5px;
+			font-weight: bold;
+		}
+		input[type=text], select {
+			width: 100%;
+			padding: 12px 20px;
+			margin: 8px 0;
+			display: inline-block;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			box-sizing: border-box;
+		}
+		input[type=submit] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 14px 20px;
+			margin: 8px 0;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+		}
+		input[type=submit]:hover {
+			background-color: #45a049;
+		}
+		.container {
+			border-radius: 5px;
+			background-color: #f2f2f2;
+			padding: 20px;
+		}
+		.col-25 {
+			float: left;
+			width: 25%;
+			margin-top: 6px;
+		}
+		.col-75 {
+			float: left;
+			width: 75%;
+			margin-top: 6px;
+		}
+		.row:after {
+			content: "";
+			display: table;
+			clear: both;
+		}
+		@media screen and (max-width: 600px) {
+			.col-25, .col-75, input[type=submit] {
+				width: 100%;
+				margin-top: 0;
+			}
+		}
+
+/*Materials dropdown checkbox*/
+
+.dropdown-check-list {
+  display: inline-block;
+}
+
+.dropdown-check-list .anchor {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  padding: 5px 50px 5px 10px;
+  border: 1px solid #ccc;
+}
+
+.dropdown-check-list .anchor:after {
+  position: absolute;
+  content: "";
+  border-left: 2px solid black;
+  border-top: 2px solid black;
+  padding: 5px;
+  right: 10px;
+  top: 20%;
+  -moz-transform: rotate(-135deg);
+  -ms-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+
+.dropdown-check-list .anchor:active:after {
+  right: 8px;
+  top: 21%;
+}
+
+.dropdown-check-list ul.items {
+  padding: 2px;
+  display: none;
+  margin: 0;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+.dropdown-check-list ul.items li {
+  list-style: none;
+}
+
+.dropdown-check-list.visible .anchor {
+  color: #0094ff;
+}
+
+.dropdown-check-list.visible .items {
+  display: block;
+}
+
+
+/*FOOTER*/
+.my_footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}

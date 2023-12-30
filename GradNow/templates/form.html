@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block metadescription %}
+GradNow School Store Form page
+{% endblock %}
+
+{% block title %}
+form Page
+{% endblock %}
+
+{% block content %}
+
+<div class="form">
+	<form action="/" method="post">
+    {% csrf_token %}
+		<div>
+			<label for="name">Name</label>
+			<input type="text" id="name" name="name" placeholder="Your name..">
+		</div>
+		<div>
+			<label for="dob">DOB</label>
+			<input type="date" id="dob" name="dob" placeholder="Your date of birth..">
+		</div>
+		<div>
+			<label for="age">Age</label>
+			<input type="text" id="age" name="age" placeholder="Your age..">
+		</div>
+		<div>
+			<label for="gender">Gender</label>
+			<select id="gender" name="gender">
+				<option value="">Select</option>
+				<option value="male">Male</option>
+				<option value="female">Female</option>
+				<option value="other">Other</option>
+			</select>
+		</div>
+		<div>
+			<label for="phone">Phone Number</label>
+			<input type="text" id="phone" name="phone" placeholder="Your phone number..">
+		</div>
+		<div>
+			<label for="email">Email</label>
+			<input type="text" id="email" name="email" placeholder="Your email..">
+		</div>
+		<div>
+			<label for="address">Address</label>
+			<input type="text" id="address" name="address" placeholder="Your address..">
+		</div>
+
+<!--Dropdown of Department & its submenu Courses-->
+
+    <div class="row">
+
+    <div class="col-md-4">
+<p><b>Department</b></p>
+        <select name="dept" id="Department" class="form-control">
+            <option value="0">--Select Department--</option>
+            {% for item in Department  %}
+            <option value="{{ item.id }}">{{ item.departmentname }}</option>
+            {% endfor %}
+        </select>
+    </div>
+		<br>
+<p><b>Course</b></p>
+    <div class="col-md-4">
+        <select name="crse" id="Course" class="form-control">
+            <option value="0">--Select Course--</option>
+            {% for item in Course  %}
+            <option value="{{ item.deptid_id }}">{{ item.crsename }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+   </div>
+
+<script>
+
+$(document).ready(function(){
+
+ var Department = $("#Department");
+ var Course = $("#Course");
+ var $options = Course.find('option');
+ Department.on('change',function(){
+    Course.html($options.filter('[value="'+ this.value  +'"]'));
+ }).trigger('change');
+
+});
+</script>
+
+<!--PURPOSES-->
+		<div>
+			<label for="purpose">Purpose</label>
+			<select id="purpose" name="purpose">
+				<option value="purpose1">Enquiry</option>
+				<option value="purpose2">Place Order</option>
+				<option value="purpose3">Return</option>
+			</select>
+		</div>
+<br>
+<!--Materials dropdown-->
+		<p><b>Materials</b></p>
+<div id="list1" class="dropdown-check-list" tabindex="100">
+  <span class="anchor">--Select Materials--</span>
+  <ul class="items">
+    <li><input type="checkbox" /> Debt Notebook </li>
+    <li><input type="checkbox" /> Pen </li>
+    <li><input type="checkbox" /> Exam Papers </li>
+  </ul>
+</div>
+
+<!--SUBMIT button event-->
+<div>
+  <input type="submit" value="Submit" onclick="submitForm()">
+  <input type="reset" value="Reset">
+</div>
+<script>
+  function submitForm() {
+
+    alert("Thank you for submitting the form!");
+
+    window.location.href = "/";
+  }
+</script>
+
+
+	</form>
+</div>
+
+
+{% endblock %}

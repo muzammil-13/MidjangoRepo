@@ -11,19 +11,23 @@
 
 .body{
     font-family: 'Gabarito', sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 .my_footer P{
-    padding-top: 20px;
-    font-size: 14px;
+    padding-top: 2em;
+    font-size: 1em;
 }
 .my_footer{
     background-color: #f8f9fa;
-    position: fixed;
-    left: 0;
-    bottom: 0;
+    position:fixed;
+    left:0;
+    bottom:0;
     width: 100%;
     text-align: center;
+    margin-top: auto;
 }
 
 /*category page*/
