@@ -13,8 +13,7 @@
 
 **Getting Started:**
 
-For quick access and exploration, feel free to visit the live hosted links provided above. To delve deeper into the code structure and technical details, consider contributing as a potential collaborator or simply forking the repository to create your custom projects.
-
+For quick access and exploration, feel free to visit the live hosted links provided above.
 
 **Stay Updated:**
 
