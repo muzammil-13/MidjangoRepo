@@ -9,7 +9,7 @@
         <div class="col-md-12">
             <div class="banner">
                 <div class="banner-text">
-                    <h1>ToDo App</h1>
+                    <h1>To Do App</h1>
                 </div>
             </div>
         </div>
@@ -24,15 +24,15 @@
         <div class="col-md-6">
             <form method="POST" class="p-3 shadow">
                 {% csrf_token %}
-                <p> <h4>Create New Task ➕</h4>
+                <p> <h4>Create New Task <b>+</b></h4>
                 <div class="form-group">
-                    <input type="text" name="task" placeholder="Task Name">
+                    <input type="text" name="task" placeholder="Task Name" required>
                 </div>
                 <div class="form-group">
-                    <br><input type="text" name="priority" placeholder="Enter your priority">
+                    <br><input type="number" name="priority" placeholder="Priority number">
                 </div><br>
                 <div class="form-group">
-                    <input type="date" class="form-control" name="date" placeholder="Enter your date">
+                    <input type="date" class="form-control" name="date" placeholder="choose the date" required>
                 </div>
                 <div class="form-group">
                     <br><input type="submit" class="btn btn-success">
