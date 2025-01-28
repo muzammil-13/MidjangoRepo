@@ -1,0 +1,6 @@
+Django>=4.2.0
+Pillow>=10.0.0  # For image handling
+django-crispy-forms>=2.0  # For better form rendering
+python-dotenv>=1.0.0  # For environment variables
+django-allauth>=0.54.0  # For authentication
+django-bootstrap4>=23.1  # For Bootstrap integration
