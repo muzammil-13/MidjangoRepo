@@ -1,0 +1,24 @@
+# Core
+Django==4.2.6
+Pillow==10.0.0
+
+# Frontend
+django-bootstrap5==23.3
+django-crispy-forms==2.0
+
+# Development
+django-debug-toolbar==4.2.0
+
+# Database
+psycopg2-binary==2.9.7
+
+# Static/Media Files
+whitenoise==6.5.0
+django-storages==1.14
+
+# Deployment
+gunicorn==21.2.0
+python-dotenv==1.0.0
+
+# Security
+django-cors-headers==4.2.0
