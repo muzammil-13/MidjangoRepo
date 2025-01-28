@@ -11,6 +11,7 @@ django-debug-toolbar==4.2.0
 
 # Database
 psycopg2-binary==2.9.7
+mysqlclient==2.2.0
 
 # Static/Media Files
 whitenoise==6.5.0
