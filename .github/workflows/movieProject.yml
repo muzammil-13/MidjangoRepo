@@ -1,12 +1,12 @@
-name: Todo App CI
+name: Movie Portal CI
 
 on:
   push:
     paths:
-      - 'todoProject/**'
+      - 'movieProject/**'
   pull_request:
     paths:
-      - 'todoProject/**'
+      - 'movieProject/**'
 
 jobs:
   build:
@@ -19,10 +19,10 @@ jobs:
           python-version: '3.10'
       - name: Install dependencies
         run: |
-          cd todoProject
+          cd movieProject
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - name: Run Tests
         run: |
-          cd todoProject
+          cd movieProject
           python manage.py test
