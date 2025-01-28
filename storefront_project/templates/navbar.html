@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+<div class="container-fluid">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+<!--Home button-->
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'shop:allProdCat' %}">Home</a>
+        </li>
+
+<!--Shop title Dropdown-->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Shop
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'shop:allProdCat' %}">All Products</a></li>
+              {% for cat in links %}
+            <li><a class="dropdown-item" href="{{cat.get_url}}">{{cat.name}}</a></li>
+              {% endfor %}
+          </ul>
+        </li>
+
+<!--shopping cart-->
+          {% if item_count > 0 %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'cart:cart_detail' %}"><i class="fa fa-shopping-cart"></i>({{item_count}})</a>
+        </li>
+          {% endif %}
+      </ul>
+
+        <!--SEARCH app-->
+      <form class="d-flex" action="{% url 'search_app:SearchResult' %}" method="get">
+          {% csrf_token %}
+        <input class="form-control me-2" type="search" placeholder="Search" name="q" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </form>
+
+    </div>
+</div>
+  </div>
+</nav>

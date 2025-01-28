@@ -1,0 +1,44 @@
+{% load static %}
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/"><b>GradNOW</b></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+<!--      <li class="nav-item active">-->
+<!--        <a class="nav-link" href="{% url 'school:home' %}">Home <span class="sr-only">(current)</span></a>-->
+<!--      </li>-->
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Departments
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Computer_science">Computer Science</a>
+            <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Biology">Biology Science</a>
+            <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Commerce">Commerce</a>
+            <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Humanities">Humanities</a>
+            <a class="dropdown-item" href="https://en.wikipedia.org/wiki/Fine_art">Fine Arts</a>
+        </div>
+      </li>
+
+      <!--LOGIN-->
+
+        {% if user.is_authenticated %}
+        <li>Hello {{user.username}} </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/logout">logout</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="/register">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/login">Login</a>
+        </li>
+        {% endif %}
+
+    </ul>
+  </div>
+</nav>

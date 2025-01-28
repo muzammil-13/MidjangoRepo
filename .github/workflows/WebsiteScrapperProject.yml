@@ -1,0 +1,28 @@
+name: Web Scraper CI
+
+on:
+  push:
+    paths:
+      - 'WebsiteScrapperProject/**'
+  pull_request:
+    paths:
+      - 'WebsiteScrapperProject/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+      - name: Install dependencies
+        run: |
+          cd WebsiteScrapperProject
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      - name: Run Tests
+        run: |
+          cd WebsiteScrapperProject
+          python manage.py test

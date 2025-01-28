@@ -1,0 +1,23 @@
+# Core
+Django==4.2.6
+python-dateutil==2.8.2
+
+# Frontend
+django-bootstrap5==23.3
+django-crispy-forms==2.0
+
+# Development
+django-debug-toolbar==4.2.0
+
+# Database
+sqlparse==0.4.4
+
+# Static Files
+whitenoise==6.5.0
+
+# Deployment
+gunicorn==21.2.0
+python-dotenv==1.0.0
+
+# Security
+django-cors-headers==4.2.0

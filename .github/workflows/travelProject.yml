@@ -1,0 +1,51 @@
+name: Travel Website CI
+
+on:
+  push:
+    paths:
+      - 'travelProject/**'
+  pull_request:
+    paths:
+      - 'travelProject/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: travel_db
+        ports:
+          - 3306:3306
+        options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          
+      - name: Install system dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install python3-dev default-libmysqlclient-dev build-essential pkg-config
+          
+      - name: Install Python dependencies
+        run: |
+          cd travelProject
+          python -m pip install --upgrade pip
+          pip install mysqlclient
+          pip install -r requirements.txt
+          
+      - name: Run Tests
+        env:
+          DJANGO_SETTINGS_MODULE: travelProject.settings
+          DATABASE_URL: mysql://root:root@127.0.0.1:3306/travel_db
+        run: |
+          cd travelProject
+          python manage.py test

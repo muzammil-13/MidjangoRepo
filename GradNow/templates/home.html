@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block metadescription %}
+GradNow School Store Home page
+{% endblock %}
+
+{% block title %}
+GradNow Store
+{% endblock %}
+
+{% block content %}
+
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="login-button">
+        <a class="nav-link" href="{% url 'school:login' %}">
+        <button type="button" class="btn btn-warning">Login</button>
+        </a>
+    </div>
+</div>
+
+{% endblock %}
