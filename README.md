@@ -1,4 +1,4 @@
-# 🐍 MidjangoRepo: Django Project Portfolio
+# 🐍 Inmakes Django Projects Portfolio
 
 Welcome to my Django project collection! This repository showcases real-world implementations across different domains using Django framework.
 
